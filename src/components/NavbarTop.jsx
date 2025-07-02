@@ -155,12 +155,23 @@ export default function NavbarTop({ onToggleMenu }) {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item onClick={() => navigate("/profile")}>
+                {/* <Dropdown.Item onClick={() => navigate("/profile")}>
                   My Profile
+                </Dropdown.Item> */}
+                <Dropdown.Item
+                  onClick={() => {
+                    if (user.role === "admin") {
+                      navigate("/admin");
+                    } else if (user.role === "rider") {
+                      navigate("/rider");
+                    } else {
+                      navigate("/user");
+                    }
+                  }}
+                >
+                  Dashboard
                 </Dropdown.Item>
-                <Dropdown.Item onClick={() => navigate("/orders")}>
-                  Orders
-                </Dropdown.Item>
+
                 <Dropdown.Divider />
                 <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
               </Dropdown.Menu>
