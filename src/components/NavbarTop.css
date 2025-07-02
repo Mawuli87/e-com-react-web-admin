@@ -1,0 +1,58 @@
+/* src/components/NavbarTop.css */
+.cart-badge-animate {
+  animation: pop 0.4s ease-in-out;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.sticky-shadow {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  z-index: 1030;
+}
+
+/* Hover effect */
+.nav-hover {
+    transition: all 0.2s ease-in-out;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+   
+  }
+  
+  .nav-hover:hover {
+    background-color: rgba(255, 255, 255, 0.419);
+    transform: scale(1.05);
+  }
+
+  .nav-active {
+    font-weight: bold;
+    border-bottom: 2px solid orange;
+  }
+  
+  .form-control:focus {
+    border-color: orange;
+    box-shadow: 0 0 0 0.2rem rgba(255, 165, 0, 0.25);
+    transition: all 0.3s ease-in-out;
+  }
+  
+
+  /* 2/3 width on small devices */
+@media (max-width: 768px) {
+    .offcanvas-custom-width {
+      width: 66.6667% !important;
+      border-top-left-radius: 12px;
+      border-bottom-left-radius: 12px;
+    }
+  }
+  
+  

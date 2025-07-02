@@ -1,0 +1,57 @@
+/* src/components/OffCanvasMenu.css */
+
+/* 2/3 width on small devices */
+@media (max-width: 768px) {
+    .offcanvas-custom-width {
+      width: 66.6667% !important;
+      border-top-right-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+  }
+  
+  /* Dark mode */
+  /* .offcanvas-custom-width {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    transition: transform 0.3s ease-in-out;
+  } */
+  
+  /* Menu item styles */
+  /* .category-item {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+  } */
+  
+  .category-icon {
+    margin-right: 10px;
+    color: #f0ad4e;
+  }
+
+
+  
+  .category-item:hover {
+    background-color: #dbd3d3e7;
+    padding-left: 10px;
+    border-radius: 6px;
+   
+  }
+  
+  .subcategory-list {
+    padding-left: 20px;
+    padding-top: 5px;
+  }
+  
+  .subcategory-item {
+    font-size: 0.95rem;
+    padding: 5px 0;
+    color: #201d1d36;
+    cursor: pointer;
+  }
+  
+  .subcategory-item:hover {
+    color: #f0ad4e;
+  }
