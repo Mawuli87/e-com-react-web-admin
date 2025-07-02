@@ -1,0 +1,22 @@
+/* src/components/CategoryBar.css */
+
+.category-bar::-webkit-scrollbar {
+    height: 6px;
+  }
+  .category-bar::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 10px;
+  }
+  
+  .category-item {
+    font-weight: 500;
+    color: #333;
+    transition: all 0.2s ease-in-out;
+    padding: 6px 12px;
+    border-radius: 6px;
+  }
+  .category-item:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+  }
+  
