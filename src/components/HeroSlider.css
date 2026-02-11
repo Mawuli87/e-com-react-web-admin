@@ -1,19 +1,35 @@
+.banner_img{
+  width: 100vw;
+  height: 280px;
+}
+
+.carasousel{
+  margin-top: 10;
+}
+
+
+@media (max-width:768px){
+  .banner_img{
+      object-fit: cover;
+      height: 180px;
+  }
+}
+
 .ad-box img {
     object-fit: cover;
     border-radius: 8px;
   }
-.slider-container {
+  .slider-container {
     position: relative;
     width: 100%;
-    height: 450px;
+    height: 600px; /* change from min-height */
     overflow: hidden;
-    margin-top: 10px;
   }
   
   .slide {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100%; /* force to fill parent height immediately */
     background: #000;
     opacity: 0;
     transition: opacity 1s ease-in-out;
@@ -28,8 +44,8 @@
   .slider-img {
     width: 100%;
     height: 100%;
+    display: block;
     object-fit: cover;
-    display: none;
   }
   
   .slider-img.loaded {
@@ -82,7 +98,7 @@
   
   @media (max-width: 768px) {
     .slider-container {
-      height: 250px;
+      height: 300px;
     }
     .overlay h2 {
       font-size: 1.4rem;

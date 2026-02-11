@@ -102,13 +102,14 @@ export default function CheckoutPage() {
     const payload = {
       address_id: addressId,
       payment_method: paymentMethod,
+      totalAndFees: total,
       items: cartItems.map((item) => ({
         product_id: item.id,
         quantity: item.quantity,
         price: item.price,
       })),
     };
-
+    console.log("Payload " + JSON.stringify(payload));
     const res = await submitCheckout(payload, token);
 
     if (res.error) {

@@ -6,6 +6,8 @@ import { fetchCategories } from "../hooks/api";
 import Loading from "../components/Loading"; // Make sure this shows spinner + optional text
 import HeroSlider from "../components/HeroSlider";
 import Feature from "../components/Feature";
+import Footer from "../components/footer/Footer";
+import Deals from "../components/Deals";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -54,7 +56,9 @@ export default function Home() {
             {/* 👇 Add the Hero Slider here */}
             <HeroSlider />
             <Feature />
+            <Deals />
             {/* You can render featured products, promotions, or banners here */}
+            <Footer />
           </div>
         </>
       )}

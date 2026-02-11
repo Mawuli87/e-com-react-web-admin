@@ -69,19 +69,20 @@ export default function LoginForm({ onSuccess, onForgotPassword }) {
 
       toast.success("Logged in successfully!");
       //redirect based on role
-      const decoded = decodeToken(res.token);
-      switch (decoded.role) {
-        case "admin":
-          navigate("/admin");
-          break;
-        case "rider":
-          navigate("/rider");
-          break;
-        default:
-          navigate("/dashboard"); // user
-      }
+      // const decoded = decodeToken(res.token);
+      // switch (decoded.role) {
+      //   case "admin":
+      //     navigate("/admin");
+      //     break;
+      //   case "rider":
+      //     navigate("/rider");
+      //     break;
+      //   default:
+      //     navigate("/user"); // user
+      // }
 
       if (onSuccess) onSuccess(); // close modal if using modal
+      navigate("/");
     } else {
       toast.error(res.error || "Login failed.");
     }

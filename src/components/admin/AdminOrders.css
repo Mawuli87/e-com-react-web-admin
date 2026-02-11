@@ -1,0 +1,25 @@
+/* Make table header sticky */
+.table-responsive thead th {
+    position: sticky;
+    top: 0;
+    background: #343a40;
+    color: white;
+    z-index: 1;
+    overflow-x: auto;
+  }
+  .status-btn {
+    padding: 0.5rem 1rem;
+    margin: 0 4px;
+    border-radius: 5px;
+    border: 1px solid #007bff;
+    background-color: white;
+    color: #007bff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .status-btn.active {
+    background-color: #007bff;
+    color: white;
+  }
+  

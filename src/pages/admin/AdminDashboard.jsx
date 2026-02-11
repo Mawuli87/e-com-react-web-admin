@@ -1,56 +1,30 @@
-// pages/AdminDashboard.jsx
-import React, { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../contexts/AuthContext";
-import DashboardLayout from "../../components/dashboard/DashboardLayout";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 
-export default function AdminDashboard() {
-  const { user } = useContext(AuthContext);
-  const navigate = useNavigate();
+import RightSide from "../../components/admin/Cards/RightSide";
+import "./adminDashboard.css";
+import SidebarMenu from "../../components/admin/SidebarMenu";
+import { SidebarData } from "../../Data/Data";
 
-  // Redirect if not admin
-  useEffect(() => {
-    if (user?.role !== "admin") {
-      navigate("/dashboard"); // fallback for non-admin
-    }
-  }, [user, navigate]);
+function AdminDashboard() {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  // Get the active component from SidebarData
+  const ActiveComponent = SidebarData[selectedIndex].component;
 
   return (
-    <DashboardLayout role="admin">
-      <div className="container-fluid">
-        <h3 className="mb-4">🛠️ Admin Dashboard</h3>
-
-        <div className="row">
-          <div className="col-md-4 mb-3">
-            <div className="card shadow-sm">
-              <div className="card-body text-center">
-                <h5>📦 Total Products</h5>
-                <p className="display-6">120</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-md-4 mb-3">
-            <div className="card shadow-sm">
-              <div className="card-body text-center">
-                <h5>👥 Users</h5>
-                <p className="display-6">57</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-md-4 mb-3">
-            <div className="card shadow-sm">
-              <div className="card-body text-center">
-                <h5>🛒 Orders</h5>
-                <p className="display-6">342</p>
-              </div>
-            </div>
-          </div>
+    <div className="Admin admin-dashboard-theme">
+      <div className="AppGlass">
+        <SidebarMenu
+          selectedIndex={selectedIndex}
+          setSelectedIndex={setSelectedIndex}
+        />
+        <div className="main-section">
+          <ActiveComponent />
         </div>
-
-        {/* Add more admin-specific sections here */}
+        <RightSide />
       </div>
-    </DashboardLayout>
+    </div>
   );
 }
+
+export default AdminDashboard;

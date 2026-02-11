@@ -115,19 +115,37 @@ export const fetchProductById = async (id) => {
     };
   }
 };
+//fetch admin stats
+export const fetchAdminStats = async (token) => {
+  try {
+    const res = await API.get("admin/admin-stats", {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    console.log("DATA " + res.data);
+    return { data: res.data, error: null };
+  } catch (err) {
+    const errorMsg =
+      err.response?.data?.error || err.response?.data?.message || err.message;
+    return { data: null, error: errorMsg };
+  }
+};
+//fetch summary
+export async function fetchSalesSummary(token) {
+  try {
+    const res = await API.get("admin/sales-summary", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
 
-// export const submitCheckout = async (data, token) => {
-//   try {
-//     const response = await API.post("/checkout", data, {
-//       headers: {
-//         Authorization: `Bearer ${token}`,
-//       },
-//     });
-//     return response.data;
-//   } catch (err) {
-//     return { error: err.response?.data?.error || "Checkout failed" };
-//   }
-// };
+    return { data: res.data, error: null };
+  } catch (err) {
+    const errorMsg =
+      err.response?.data?.error || err.response?.data?.message || err.message;
+    return { data: null, error: errorMsg };
+  }
+}
+
 export const submitCheckout = async (payload, token) => {
   try {
     const res = await API.post("checkout", payload, {
@@ -143,10 +161,10 @@ export const submitCheckout = async (payload, token) => {
         order_id: res.data.order_id,
         message: res.data.message,
       };
-    } else {
-      return { error: "No order ID returned from server" };
     }
   } catch (err) {
-    return { error: err.message || "Checkout failed" };
+    const errorMsg =
+      err.response?.data?.error || err.response?.data?.message || err.message;
+    return { data: null, error: errorMsg };
   }
 };

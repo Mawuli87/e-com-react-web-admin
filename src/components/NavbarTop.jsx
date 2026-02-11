@@ -236,9 +236,9 @@ export default function NavbarTop({ onToggleMenu }) {
               <>
                 <div
                   className="nav-hover text-dark"
-                  onClick={() => handleNavigate("/profile")}
+                  onClick={() => handleNavigate("/admin")}
                 >
-                  <FaUser className="me-2" /> Profile
+                  <FaUser className="me-2" /> Dashboard
                 </div>
                 <div className="nav-hover text-dark" onClick={handleLogout}>
                   🚪 Logout
